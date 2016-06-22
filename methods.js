@@ -21,7 +21,7 @@ function numToDate(num,currentYear){
 	else{
 		//return the whole date
 		num=num.split('-');
-		//return months.num[1]+" "+
+
 		if(num[2]==='01'){
 			return months[num[1]]+" "+parseInt(num[2])+"st, "+num[0];
 		}
@@ -37,4 +37,13 @@ function numToDate(num,currentYear){
 	}
 }
 
-numToDate('2016-07-01',false);
+//numToDate('2016-07-01',false);
+
+=========================
+
+//takes a date gives it's day number out of 365
+
+function dayNumber(date){
+	date=date.split('-');
+	var monthDays={'01':0,'02':31,'03':59,'04':90,'05':120,'06':151,'07':181,'08':212,'09':243,'10':273,'11':304,'12':334};
+}
