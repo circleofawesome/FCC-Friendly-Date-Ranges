@@ -64,7 +64,24 @@ function makeFriendlyDates(arr) {
  else if(year1===year2){
  	properDate1=numToDate(arr[0],true);
  	properDate2=numToDate(arr[1],true).split(' ');
+ 	if(year1!=='2016'){
+ 		properDate1=numToDate(arr[0],false);
+ 		return [properDate1,properDate2.join(' ')];
+ 	}
  	return [properDate1,properDate2[1]];
+ }
+ else if((parseInt(year2)-parseInt(year1)===1)&&(date1Number>date2Number)){
+ 	properDate1=numToDate(arr[0],true);
+ 	properDate2=numToDate(arr[1],true);
+ 	if(year1!=='2016'){
+ 		properDate1=numToDate(arr[0],false);
+ 	}
+ 	return [properDate1,properDate2];
+ }
+ else{
+ 	properDate1=numToDate(arr[0],false);
+ 	properDate2=numToDate(arr[1],false);
+ 	return [properDate1,properDate2];
  }
 }
 
