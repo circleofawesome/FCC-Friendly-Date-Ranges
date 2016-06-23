@@ -42,15 +42,16 @@ function numToDate(num,currentYear){
 =========================
 
 //takes a date gives it's day number out of 365
+//octal literal error here not allowed in strict mode 
 
 function dayNumber(date){
 	date=date.split('-');
 	var monthDays={'01':0,'02':31,'03':59,'04':90,'05':120,'06':151,'07':181,'08':212,'09':243,'10':273,'11':304,'12':334};
-	if((parseInt(date[0])%4===0)&&(parseInt(date[01])>2)){
+	if((parseInt(date[0])%4===0)&&(parseInt(date[1])>2)){
 		//leap year
-		return monthDays[date[01]]+parseInt(date[02])+1;
+		return monthDays[date[1]]+parseInt(date[2])+1;
 	}
-	return monthDays[date[01]]+parseInt(date[02]);
+	return monthDays[date[1]]+parseInt(date[2]);
 }
 
 //dayNumber('2016-04-22');
